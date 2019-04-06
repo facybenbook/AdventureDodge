@@ -30,20 +30,7 @@ public class teleport : MonoBehaviour {
 
     public void goToLevel(int buildIndex)
     {
-        setFogColor(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(buildIndex); // load next level
-    }
-
-    void setFogColor(int level)
-    {
-        if (level == 1) //shouldnt even get here?
-        {
-            RenderSettings.fogColor = Color.blue;
-        }
-        else if (level == 2)
-        {
-            RenderSettings.fogColor = Color.red;
-        }
     }
 
 }

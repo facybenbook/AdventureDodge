@@ -41,7 +41,7 @@ public class playerMovement : MonoBehaviour {
         if (Input.GetKey("r"))
         {
             Debug.Log("Tried to restart");
-            FindObjectOfType<GameManager>().restart();
+            FindObjectOfType<GameManager>().GameOver(.01f);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

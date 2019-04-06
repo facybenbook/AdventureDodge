@@ -5,31 +5,30 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     bool gameHasEnded = false;
-    public float restartDelay = 2f;
+    public const float restartDelay = 2f;
+    public const float nextLevelDelay = 2f;
     public static int tries = 1;
     public static Dictionary<int, int> completedLevelsDict = new Dictionary<int, int>(); // levelindex, tries
 
-    public GameObject completeLevelUI;
+    public GameObject levelCompleteUI;
 
-	public void GameOver()
+	public void GameOver(float delay = restartDelay)
     {
-        if (gameHasEnded == false) // so it only happens once
+        if (gameHasEnded == false) // if game not over
         {
+            gameHasEnded = true; // so it only happens once
             Debug.Log("Ending level soon...");
-            Invoke("restart", restartDelay);
+            Invoke("restart", delay);
         }
         
     }
 
-    public void restart()
+    public void restart() // only call from gameover
     {
-        if (gameHasEnded == false)
-        {
-            tries++;
-            Debug.Log("Restarting...");
-            Debug.Log("Tries = " + tries.ToString());
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        tries++;
+        Debug.Log("Restarting...");
+        Debug.Log("Tries = " + tries.ToString());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void CompleteLevel()
@@ -42,8 +41,13 @@ public class GameManager : MonoBehaviour {
         }
         tries = 1;
         Debug.Log("Completed Level");
-        completeLevelUI.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // load next level
+        levelCompleteUI.SetActive(true);
+        Invoke("loadNextLevel", nextLevelDelay);
+    }
+
+    public void loadNextLevel() // loads next level in build order
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 
     public string getTries()
