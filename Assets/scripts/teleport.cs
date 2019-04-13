@@ -12,10 +12,10 @@ public class teleport : MonoBehaviour {
 
     private void Start() 
     {
-        rend = GetComponent<Renderer>();
         if (gameManager.checkIfCompletedLevel(level)) // set to black if completed that level
         {
-            rend.material.SetColor("_Color", Color.black);
+            rend = GetComponent<Renderer>();
+            rend.material.SetColor("_Color", Color.black); // set color of door
         }
     }
 

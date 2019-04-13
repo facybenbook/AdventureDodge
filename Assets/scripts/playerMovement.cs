@@ -23,6 +23,7 @@ public class playerMovement : MonoBehaviour {
 
         if (rb.position.y < -restartOnFalloffDistance) // check for falling off side
         {
+            Debug.Log("Fell off the side");
             FindObjectOfType<GameManager>().GameOver();
         }
 
@@ -40,7 +41,7 @@ public class playerMovement : MonoBehaviour {
         }
         if (Input.GetKey("r"))
         {
-            Debug.Log("Tried to restart");
+            Debug.Log("Hit r to restart");
             FindObjectOfType<GameManager>().GameOver(.01f);
         }
 

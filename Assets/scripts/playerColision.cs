@@ -9,6 +9,7 @@ public class playerColision : MonoBehaviour {
         Debug.Log(col.gameObject.name);
         if (col.collider.tag == "Obstacle")
         {
+            Debug.Log("Hit an obstacle");
             movement.enabled = false;
             FindObjectOfType<GameManager>().GameOver();
         }
@@ -23,3 +24,4 @@ public class playerColision : MonoBehaviour {
         }
     }
 }
+ 
