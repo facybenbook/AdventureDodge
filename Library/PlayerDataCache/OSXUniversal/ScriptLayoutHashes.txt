@@ -1,6 +1,6 @@
 OSXUniversal
 PlayerPath?
-C:/Games/UnityProjects/Git/AdventureDodgeMac.app
+C:/Games/UnityProjects/Git/AdventureDodge/AdventureDodgeMac.app
 SceneListBegin?
 Assets/finished levels/other levels/Welcome.unity
 Assets/finished levels/Tutorial.unity

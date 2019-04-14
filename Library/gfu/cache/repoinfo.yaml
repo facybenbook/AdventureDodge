@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2019-04-13T21:22:59.442-04:00
-  initializedAtString: 2019-04-13T21:22:59.442-04:00
+  lastUpdatedAtString: 2019-04-13T21:49:11.522-04:00
+  initializedAtString: 2019-04-13T21:49:11.522-04:00
   currentGitRemote:
     name: origin
     url: https://github.com/BigChunkyGames/AdventureDodge.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: develop
-    tracking: origin/develop
+    name: master
+    tracking: origin/master
   currentConfigBranch:
-    name: develop
+    name: master
     remote:
       name: origin
       url: https://github.com/BigChunkyGames/AdventureDodge.git
-    trackingBranch: develop
+    trackingBranch: master
   currentConfigRemote:
     name: origin
     url: https://github.com/BigChunkyGames/AdventureDodge.git
